@@ -2,8 +2,14 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    browser: "chrome",
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 8000,
+    video: false,
+    viewportWidth: 1280,
+    viewportHeight: 720,
   },
+  env: {
+    ELECTRON_DISABLE_SANDBOX: true,
+  }
 });
